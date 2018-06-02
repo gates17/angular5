@@ -1,2 +1,0 @@
-# angular5
-pwa
