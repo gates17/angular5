@@ -1,0 +1,21 @@
+<!-- USER LOGIN -->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <ul>
+    <li>
+      <label>Username</label>
+      <input [(ngModel)]="input.username" placeholder="username">
+    </li>
+    <li>
+      <label>Password</label>
+      <input [(ngModel)]="input.password" placeholder="password" type="password">
+    </li>
+    
+    <li>
+        <button (click)="loginUser()">Login User</button>
+    </li>
+  </ul>
+</div>

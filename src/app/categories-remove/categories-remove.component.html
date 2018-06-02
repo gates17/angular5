@@ -1,0 +1,19 @@
+<mat-card>
+
+    <mat-card-header>
+      <mat-card-title><h2>Remove {{category.name}} category</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <input 
+        type="hidden" 
+        name="url" 
+        [(ngModel)]="category.url"
+      >
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)=remove(category.id) mat-raised-button color="primary">Remove
+    </button>
+
+      <a mat-button routerLink="/categories">Cancel</a>
+    </mat-card-actions>
+</mat-card>

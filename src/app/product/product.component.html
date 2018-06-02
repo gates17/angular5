@@ -1,0 +1,22 @@
+<div class="container-fluid" style="margin: 80px 0px 20px 0px;">
+  <div class="col-sm-4">
+    <button [routerLink]="['/product/add']" routerLinkActive="active">Adicionar</button>
+  </div>
+</div>
+<div class="container-fluid justify-content-ceter" >
+  <div class="row justify-content-center">
+    <div *ngFor="let product of products">
+      <div class="col-sm-6">
+        <a class="category-image" href={{product.url}}>
+            <img class="d-flex mr-3" src="https://placehold.it/128x128">         
+        </a>
+        <p>{{product.id}}</p>
+        <p>{{product.name}}</p>
+        <p>{{product.description}}</p>
+        <p>{{product.date}}</p>
+        <a button [routerLink]="['/product/edit', product.id]" >{{product.id}}</a>
+      </div>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<carousel-config></carousel-config>
+<div class="container justify-content" style="margin:20px 0px ;">
+    <button [routerLink]="['/categories/create']" routerLinkActive="active">Adicionar</button>
+</div>
+<div class="container-fluid justify-content-center">
+  <div class="row justify-content-center">
+    <div *ngFor="let category of categories">
+        <div class="col-sm-6" style="margin:0px 20px ;">
+          <a class="category-image" href={{category.url}}>
+            <img class="d-flex mr-3" src="https://placehold.it/128x128">         
+          </a>
+          <p>{{category.id}}</p>
+          <p>{{category.name}}</p>
+          <p>{{category.date}}</p>
+          <a button [routerLink]="['/categories/update', category.id]" >{{category.id}}</a>
+      </div>
+    </div>
+  </div>
+</div>

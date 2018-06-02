@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>{{category.name}} Category details</h2></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <input 
+      type="hidden" 
+      name="url" 
+      [(ngModel)]="category.url"
+    >
+    <mat-list>
+      <mat-list-item>
+        {{category.name}}
+      </mat-list-item>
+      <mat-list-item>
+          {{category.date_created}}
+        </mat-list-item>
+      </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+
+    <a mat-button routerLink="/categories">Cancel</a>
+  </mat-card-actions>
+</mat-card>
