@@ -21,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductCrudComponent } from './product-crud/product-crud.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { UserComponent } from './user/user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { UserComponent } from './user/user.component';
     ContactComponent,
     ProductCrudComponent,
     UserCreateComponent,
+    DashboardComponent,
  
   ],
   imports: [
@@ -59,10 +61,8 @@ import { UserComponent } from './user/user.component';
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    CarouselConfigComponent,
+    AppComponent, 
     NavbarComponent,
-    ShowcaseComponent,
     FooterComponent
   ]
   

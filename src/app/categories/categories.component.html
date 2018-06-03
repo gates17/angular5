@@ -2,17 +2,23 @@
 <div class="container justify-content" style="margin:20px 0px ;">
     <button [routerLink]="['/categories/create']" routerLinkActive="active">Adicionar</button>
 </div>
-<div class="container-fluid justify-content-center">
-  <div class="row justify-content-center">
-    <div *ngFor="let category of categories">
-        <div class="col-sm-6" style="margin:0px 20px ;">
-          <a class="category-image" href={{category.url}}>
-            <img class="d-flex mr-3" src="https://placehold.it/128x128">         
-          </a>
-          <p>{{category.id}}</p>
-          <p>{{category.name}}</p>
-          <p>{{category.date}}</p>
-          <a button [routerLink]="['/categories/update', category.id]" >{{category.id}}</a>
+<div class="container-fluid categories-container">
+  <div class="row justify-content-between">
+    <div *ngFor="let category of categories" class="category-for">
+      <div class="card category-card" >
+        <a [routerLink]="['/categories/details', category.id]">
+          <!--Card image-->
+          <img [src]="images[0]" alt="Card image cap" >
+          <!--Card content-->
+          <div class="card-body">
+              <!--Title-->
+              <h4 class="card-title">{{category.name}}</h4>
+              <!--Text-->
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a [routerLink]="['/categories/details', category.id]" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+              
+          </div>
+        </a>
       </div>
     </div>
   </div>

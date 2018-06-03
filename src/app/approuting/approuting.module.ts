@@ -14,6 +14,7 @@ import { CategoriesCreateComponent } from '../categories-create/categories-creat
 import { CategoryUpdateComponent } from '../category-update/category-update.component';
 import { CategoriesDetailsComponent } from '../categories-details/categories-details.component';
 import { CategoriesRemoveComponent } from '../categories-remove/categories-remove.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 //services
 import { ProductService } from '../services/product.service';
@@ -22,11 +23,13 @@ import { CategoriesUpdateService } from '../services/categories-update.service';
 import { CategoriesDetailsService } from '../services/categories-details.service';
 import { CategoriesRemoveService } from '../services/categories-remove.service';
 import { CategoriesCreateService } from '../services/categories-create.service';
+import { DashboardService } from '../services/dashboard.service';
 
 const routes: Routes = [
   {path: 'products', component: ProductComponent },
   {path: 'product/add', component: ProductCrudComponent },
   {path: 'product/edit/:id', component: ProductCrudComponent },
+  {path: 'product/detail/:id', component: ProductCrudComponent },
   {path: '', component: HomeComponent },
   {path: 'login', component: UserComponent},
   {path: 'categories', component: CategoriesComponent },
@@ -34,6 +37,7 @@ const routes: Routes = [
   {path: 'categories/update/:id', component: CategoryUpdateComponent },
   {path: 'categories/details/:id', component: CategoriesDetailsComponent },
   {path: 'categories/remove/:id', component: CategoriesRemoveComponent },
+  {path: 'dashboard', component:DashboardComponent }
   
 ];
 
@@ -56,7 +60,8 @@ const routes: Routes = [
     CategoriesCreateService,
     CategoriesUpdateService,
     CategoriesDetailsService,
-    CategoriesRemoveService
+    CategoriesRemoveService,
+    DashboardService
   ],
 
 })
@@ -71,5 +76,6 @@ export const routingComponents = [
   ProductComponent,
   PromotionsComponent,
   ProductCrudComponent,
-  UserComponent
+  UserComponent,
+  DashboardComponent
 ]

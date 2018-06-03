@@ -12,6 +12,7 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductCrudComponent implements OnInit, OnDestroy {
 
+  
   product: IProduct;//IProduct = {};
   subscription: Subscription;
 
@@ -51,8 +52,8 @@ export class ProductCrudComponent implements OnInit, OnDestroy {
     }, error => console.error(error));
   }
 
-  remove(href) {
-    this.productService.removeProduct(href).subscribe(result => {
+  remove(id: number) {
+    this.productService.removeProduct(id).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
   }

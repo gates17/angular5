@@ -18,8 +18,13 @@ export class ProductService {
     return this.http.get(this._producturl+id.toString());
   }
 
-  removeProduct(href: string) {
-    return this.http.delete(href);
+  removeProduct(id: number): Observable<IProduct>{
+    if(id){
+      return this.http.delete<IProduct>(this._producturl + 'delete/' + id +'/');
+    }
+    else{
+      return this.http.get<IProduct>(this._producturl);
+    }
   }
 
   saveProduct(product: any):Observable<any> {
@@ -31,6 +36,6 @@ export class ProductService {
      return this.http.post<IProduct>(this._producturl,product);      
     }
   }
-                  
+                 
 
 } 
