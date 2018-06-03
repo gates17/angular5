@@ -1,22 +1,24 @@
-<div class="container-fluid" style="margin: 80px 0px 20px 0px;">
-  <div class="col-sm-4">
-    <button [routerLink]="['/product/add']" routerLinkActive="active">Adicionar</button>
-  </div>
+<div class="container-fluid justify-content" style="margin:20px 0px ;">
+    <button [routerLink]="['/product/add']"  routerLinkActive="active">Adicionar</button>
 </div>
-<div class="container-fluid justify-content-ceter" >
+<div class="container-fluid products-container">
   <div class="row justify-content-between">
-    <div *ngFor="let product of products">
-      <div class="col-sm-6">
-        <a class="category-image" href={{product.url}}>
-            <img class="d-flex mr-3" src="https://placehold.it/128x128">         
+    <div *ngFor="let product of products" class="product-for">
+      <div class="card product-card" >
+        <a [routerLink]="['/product/details', product.id]">
+          <!--Card image-->
+          <img [src]="images[0]" alt="Card image cap" >
+          <!--Card content-->
+          <div class="card-body">
+              <!--Title-->
+              <h4 class="card-title">{{product.name}}</h4>
+              <!--Text-->
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a [routerLink]="['/product/details', product.id]" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+              
+          </div>
         </a>
-        <p>{{product.id}}</p>
-        <p>{{product.name}}</p>
-        <p>{{product.description}}</p>
-        <p>{{product.date}}</p>
-        <a button [routerLink]="['/product/edit', product.id]" >{{product.id}}</a>
       </div>
     </div>
-    
   </div>
 </div>
