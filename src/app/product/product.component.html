@@ -5,7 +5,7 @@
   <div class="row justify-content-between">
     <div *ngFor="let product of products" class="product-for">
       <div class="card product-card" >
-        <a [routerLink]="['/product/details', product.id]">
+        <a [routerLink]="['/product/detail', product.id]">
           <!--Card image-->
           <img [src]="images[0]" alt="Card image cap" >
           <!--Card content-->
@@ -14,7 +14,7 @@
               <h4 class="card-title">{{product.name}}</h4>
               <!--Text-->
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a [routerLink]="['/product/details', product.id]" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+              <a [routerLink]="['/product/details', product.id]" class="btn btn-primary waves-light" mdbWavesEffect>Editar</a>
               
           </div>
         </a>

@@ -1,3 +1,39 @@
+<div class="productEdit container-fluid justify-content-center">
+  <form #productForm="ngForm" (ngSubmit)="save(productForm.value)">
+    <p class="h2 text-center mb-4">Add Product</p>
+
+    <div class="md-form">
+      <input type="hidden" name="url" [(ngModel)]="product.url">
+
+      <input type="text"  id="product-name" class="form-control" mdbInputDirective
+        [(ngModel)]="product.name" required name="name"
+        #description
+      >
+      <label  for="product-name">Nome</label>
+    </div>
+
+    <div class="md-form">
+      <input type="text"  id="product-description" class="form-control" mdbInputDirective
+        [(ngModel)]="product.description" required name="description"
+        #description
+      >
+      <label for="product-description" >Descrição</label>
+        
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" color="primary" type="submit" [disabled]="!productForm.form.valid">
+        Save
+      </button>
+      <button mat-raised-button color="secondary" (click)="remove(product.url)" *ngIf="product.url" type="button">
+        Delete
+      </button>
+      <a class="btn btn-danger" routerLink="/products">Cancel</a>
+    </div>
+    
+  </form>
+</div>
+<!-- OLD FORM
 <mat-card>
   <form #productForm="ngForm" (ngSubmit)="save(productForm.value)">
     <mat-card-header>
@@ -37,3 +73,4 @@
     </mat-card-actions>
   </form>
 </mat-card>
+-->

@@ -1,8 +1,8 @@
 <!-- USER LOGIN -->
+
+<!--
 <div class="container-fluid justify-content-center user-ui" >
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+
 
   <div class="container-fluid justify-content-center">
    
@@ -21,3 +21,35 @@
    
   </div>
 </div>
+
+<!-- Login form -->
+
+<div class="card">
+
+  <div class="user-ui justify-content-center">
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+    <form [formGroup]="loginForm">
+      <p class="h5 text-center mb-4">Sign in</p>
+
+      <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="text" formControlName="username" id="defaultForm-email" class="form-control" mdbInputDirective>
+        <label for="defaultForm-email">Your email</label>
+      </div>
+
+      <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="password" formControlName="password" id="defaultForm-pass" class="form-control" mdbInputDirective>
+        <label for="defaultForm-pass">Your password</label>
+      </div>
+
+      <div class="text-center">
+        <input type="submit" (click)="loginUser()" class="btn btn-default waves-light" mdbWavesEffect value="Login">
+      </div>
+    </form>
+</div>
+</div>
+
+<!-- Login form -->

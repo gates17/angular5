@@ -1,3 +1,31 @@
+<div class="categoryEdit container-fluid justify-content-center">
+    <form #categoryForm="ngForm" (ngSubmit)="save(categoryForm.value)">
+      <p class="h2 text-center mb-4">Editar Categoria</p>
+  
+      <div class="md-form">
+        <input type="hidden" name="url" [(ngModel)]="category.url">
+        <input type="hidden" name="id" [(ngModel)]="category.id">
+  
+        <input type="text"  id="category-name" class="form-control" mdbInputDirective
+          [(ngModel)]="category.name" required name="name"
+          #description
+        >
+        <label  for="category-name">Nome</label>
+      </div>
+  
+  
+      <div class="actions">
+        <button class="btn btn-primary" color="primary" type="submit" [disabled]="!categoryForm.form.valid">
+          Save
+        </button>
+       
+        <a class="btn btn-danger" routerLink="/categories">Cancel</a>
+      </div>
+      
+    </form>
+  </div>
+
+  <!-- Old Form
 <mat-card>
   <form #categoryForm="ngForm" (ngSubmit)="save(categoryForm.value)">
     <mat-card-header>
@@ -36,3 +64,5 @@
     </mat-card-actions>
   </form>
 </mat-card>
+
+-->

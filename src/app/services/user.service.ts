@@ -8,6 +8,8 @@ export class UserService {
   constructor(private http: HttpClient) {  }
 
   loginUser(userData): Observable<any> {
+    console.log(userData);
+    alert(this.http.post('http://127.0.0.1:8000/teste/auth/', userData))
     return this.http.post('http://127.0.0.1:8000/teste/auth/', userData);
   }
 }

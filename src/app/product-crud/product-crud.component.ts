@@ -8,7 +8,7 @@ import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-product-crud',
   templateUrl: './product-crud.component.html',
-  styleUrls: ['./product-crud.component.css']
+  styleUrls: ['./product-crud.component.scss']
 })
 export class ProductCrudComponent implements OnInit, OnDestroy {
 
